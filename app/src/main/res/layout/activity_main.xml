@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/cityNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/urbanist_medium"
+        android:text="City"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cityTemperatureText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cityNameText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/urbanist_medium"
+        android:text="25°"
+        android:textColor="#FFBF00"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/detailsLayout"
+        android:layout_width="match_parent"
+        android:background="@drawable/background2"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cityTemperatureText"
+        android:gravity="center"
+
+        android:backgroundTint="#B37199"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/humidityLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:src="@drawable/humidity" />
+
+            <TextView
+                android:id="@+id/humidityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60%"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:fontFamily="@font/urbanist_medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Humidity"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:fontFamily="@font/urbanist_medium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/windLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:src="@drawable/wind" />
+
+            <TextView
+                android:id="@+id/windText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10km/h"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:fontFamily="@font/urbanist_medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Wind"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:fontFamily="@font/urbanist_medium" />
+        </LinearLayout>
+    </LinearLayout>
+ <ImageView
+     android:layout_width="200dp"
+     android:layout_height="200dp"
+     android:id="@+id/weatherIcon"
+     android:layout_centerHorizontal="true"
+     android:layout_margin="20dp"
+     android:layout_below="@id/detailsLayout"
+     android:contentDescription="Weather Icon"
+     android:src="@drawable/sun"
+     android:elevation="12dp"
+     />
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Sunny"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:layout_below="@id/weatherIcon"
+        android:fontFamily="@font/urbanist_medium"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cityNameInput"
+        android:layout_below="@+id/descriptionText"
+        android:textColor="#EFEFEF"
+        android:padding="12dp"
+        android:fontFamily="@font/urbanist_medium"
+        android:textSize="24sp"
+        android:layout_marginTop="20dp"
+        android:hint="Enter city name"
+        android:gravity="center"
+        />
+    <Button
+        android:id="@+id/refreshButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cityNameInput"
+        android:fontFamily="@font/urbanist_medium"
+        android:textSize="24dp"
+
+        android:layout_margin="30dp"
+        android:text="Change city"
+        />
+</RelativeLayout>
